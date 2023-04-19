@@ -1,0 +1,20 @@
+@startuml 演習2-6
+left to right direction
+actor 人事担当者
+actor 社員
+
+rectangle 従業員登録システム {
+  usecase 社員情報を登録する as UC1
+  usecase 社員情報を参照する as UC2
+  usecase 社員情報を変更する as UC3
+  usecase 変更届を提出する as UC4
+}
+
+人事担当者 --> UC1
+人事担当者 --> UC2
+人事担当者 --> UC3
+社員 --> UC2
+社員 --> UC4
+
+UC4 .> UC3 : <<include>>
+@enduml

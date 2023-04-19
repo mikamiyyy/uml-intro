@@ -1,0 +1,12 @@
+@startuml 演習2-5
+left to right direction
+actor 販売部スタッフ
+
+rectangle 販売管理システム {
+usecase 注文商品を確認する as UC1
+usecase 商品の出荷状況を登録する as UC2
+}
+
+販売部スタッフ --> UC1 : 田中さん
+販売部スタッフ --> UC2 : 鈴木さん
+@enduml
