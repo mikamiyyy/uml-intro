@@ -3,50 +3,39 @@ left to right direction
 object "<u>重要顧客</u>" as imuser {
 氏名 = 高橋洋平
 }
-
-object "<u> 顧客</u>" as user {
-氏名 = 高田理恵
-}
-
-object "<u> 顧客2</u>" as user2 {
-氏名 = 大坪直之
-}
-
-object "<u>商品</u>" as mer {
-商品名 = テレビ
-型式 = V12345
-}
-
-object "<u>商品2</u>" as mer2 {
-商品名 = 冷蔵庫
-型式 = R8765
-}
-
-object "<u>商品3</u>" as mer3 {
-商品名 = プロジェクタ
-型式 = P1122
-}
-
 object "<u> 注文:高橋洋平</u>" as order {
 注文日 = 11月21日
 数量 = 2
 }
-
 object "<u> 注文2:高橋洋平</u>" as order2 {
 注文日 = 11月21日
 数量 = 1
 }
-
 object "<u> 注文3:高田理恵</u>" as order3 {
 注文日 = 12月23日
 数量 = 1
 }
+object "<u>商品</u>" as mer {
+商品名 = テレビ
+型式 = V12345
+}
+object "<u>商品2</u>" as mer2 {
+商品名 = 冷蔵庫
+型式 = R8765
+}
+object "<u> 顧客</u>" as user {
+氏名 = 高田理恵
+住所
+}
+object "<u> 顧客2</u>" as user2 {
+氏名 = 大坪直之
+住所
+}
 
-imuser -- order : 注文する
-order -- mer : 注文する
-imuser -- order2 : 注文する
-order2 -- mer2 : 注文する
-user -- order3 : 注文する
-order3 -- mer2 : 注文する
-user2 -- mer3 : 見る
+imuser -- mer
+imuser -- mer2
+mer -- order
+mer2 -- order2
+user -- mer2
+mer2 -- order3 
 @enduml
