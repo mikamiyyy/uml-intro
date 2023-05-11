@@ -1,0 +1,36 @@
+@startuml 洋平先生
+left to right direction
+object "<u> 社員1</u>" as em {
+氏名 = 高橋洋平
+}
+object "<u> 社員2</u>" as emp {
+氏名 = 樋口正之
+}
+
+object "<u>資格1</u>" as Qua {
+名称 = 情報処理安全確保支援士
+}
+object "<u>資格2</u>" as qua {
+名称 = LinuC試験Level1
+}
+
+object "<u>取得情報1</u>" as info1 {
+取得日 = 2020年
+報告日 = 2020年10月21日
+}
+object "<u>取得情報2</u>" as info2 {
+取得日 = 2020年
+報告日
+}
+object "<u>取得情報3</u>" as info3 {
+取得日 = 2021年
+報告日 = 2021年3月28日
+}
+
+em -- info1:持つ
+info1 -- Qua:該当する
+emp -- info2:持つ
+info2 -- Qua:該当する
+em -- info3:持つ
+info3 -- qua:該当する
+@enduml
