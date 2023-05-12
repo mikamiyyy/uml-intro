@@ -1,0 +1,24 @@
+@startuml 商品検索
+hide footbox
+Actor "<u>:会員</u>" as me
+participant ":商品検索画面" as se <<boundary>>
+participant ":商品検索コントローラ" as co  <<control>>
+activate me
+    me -> se:注文情報を確認
+    activate se
+        se -> co:商品情報表示
+        activate co
+            create "<u>:商品</u>" as go <<entity>>
+            co --> go:<<create>>生成()
+            create "<u>:商品カテゴリ</u>" as ca <<entity>>
+            loop 商品カテゴリ数
+            co --> ca:<<create>>生成()
+            co -> go:商品カテゴリを設定
+            activate go
+            deactivate go
+            end
+            se <-- co:商品情報
+            deactivate co
+            se -> se:商品情報表示
+            activate se
+@enduml

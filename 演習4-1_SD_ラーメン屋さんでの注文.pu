@@ -1,0 +1,25 @@
+@startuml 演習4-1_SD_ラーメン屋さんでの注文
+
+hide footbox
+' メッセージに自動で番号を振る
+autonumber
+' 厳密なUMLに準拠する
+skinparam style strictuml
+actor "<u>:顧客</u>" as customer
+participant "<u>:フロア店員</u>" as clerk
+participant "<u>:料理人</u>" as cook
+
+activate customer
+    customer -> clerk : ラーメンを注文する
+    activate clerk
+        clerk -> cook : 注文を伝える
+        activate cook
+            activate cook
+            cook -> cook : 注文したラーメンを作る
+            cook -> clerk : ラーメンを受け取る
+            deactivate cook
+        deactivate cook
+        clerk --> customer : 注文したラーメンを提供する
+    deactivate clerk
+deactivate customer
+@enduml

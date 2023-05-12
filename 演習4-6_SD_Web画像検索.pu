@@ -1,0 +1,22 @@
+@startuml 画僧検索
+hide footbox
+Actor ユーザー as us
+participant "<u>:ブラウザ</u>" as br
+participant "<u>webサーバー</u>" as web
+participant "<u>画像サーバー</u>" as ga
+activate us
+activate br
+us -> br:閲覧ボタン
+activate web
+br -> web:画像検索
+web -> ga:画像ファイル検索
+activate ga
+ga -> ga:検索
+web <-- ga:検索結果
+deactivate ga
+web --> web:閲覧可能状態
+br <-- web:再生
+deactivate web
+us <-- br:画像表示
+deactivate br
+@enduml

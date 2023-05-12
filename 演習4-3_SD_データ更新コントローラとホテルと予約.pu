@@ -1,0 +1,11 @@
+@startuml ホテル
+hide footbox
+participant "<u>ontroller:データ更新コントローラ</u>" as co
+participant "<u>hotell:ホテル</u>" as ho
+mainframe  ホテル予約
+activate co
+    co -> ho: 予約
+    activate ho
+    ho -> ho: 予約オブジェクト作成
+    co <-- ho:予約登録
+@enduml
