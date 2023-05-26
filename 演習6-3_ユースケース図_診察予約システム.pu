@@ -1,0 +1,19 @@
+@startuml 6-3-1
+left to right direction
+
+actor 患者
+actor 看護師
+
+rectangle "診察予約システム" {
+    (メニュー) as D
+    (予約と確認) as A
+    (あなたの順番) as B
+    (今の順番) as C
+
+    患者 -- D
+    患者 -- A
+    患者 -- B
+    患者 -- C
+    C -- 看護師
+}
+@enduml
