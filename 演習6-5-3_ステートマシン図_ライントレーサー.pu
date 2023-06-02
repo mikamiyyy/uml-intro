@@ -1,0 +1,13 @@
+@startuml ライントレーサー
+left to right direction
+state 電源SWがOFF
+
+state 電源SWがON{
+    state 右旋回
+    state 左旋回
+    右旋回 --> 左旋回 :右モータON、左モータOFF
+    左旋回 --> 右旋回 :右モータOFF、左モータON
+}
+電源SWがOFF -right-> 電源SWがON :スイッチON
+電源SWがON --> 電源SWがOFF :スイッチOFF
+@enduml

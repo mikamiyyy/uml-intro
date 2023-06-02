@@ -1,0 +1,12 @@
+@startuml ライトレーサー
+left to right direction
+actor ユーザー as us
+actor 光センサー as li
+actor 左右モーター  as lf
+rectangle ライントレーサー {
+    usecase ラインの右境界線上を走る
+}
+us --> ラインの右境界線上を走る
+ラインの右境界線上を走る <-- li
+ラインの右境界線上を走る <-- lf
+@enduml
